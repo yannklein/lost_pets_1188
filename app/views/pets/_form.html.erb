@@ -1,0 +1,20 @@
+<%#= form_with model: pet do |f| %>
+  <%#= f.label :name %>
+  <%#= f.text_field :name %>
+<%# end %>
+
+<div class="row justify-content-center m-5">
+  <div class="col-6">
+    <%= simple_form_for pet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :color %>
+    <%= f.input :nb_legs, label: "Legs 🦿" %>
+    <%= f.input :address %>
+    <%= f.input :species, collection: Pet::SPECIES %>
+    <%= f.input :image_url %>
+    <%= f.input :found_on, html5: true %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>
+

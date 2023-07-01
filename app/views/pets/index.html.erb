@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="text-center my-5">Did you lose someone? 😿</h1>
+  <div class="row justify-content-center">
+    <% @pets.each do |pet| %>
+      <div class="col-md-4 col-12">
+        <div class="card m-3">
+          <img src="<%= pet.image_url %>" class="card-img-top" alt="pet">
+          <div class="card-body">
+            <h5 class="card-title"><%= pet.name %></h5>
+            <p class="card-text">A <%= pet.species %> of <%= pet.color %> color with <%= pluralize(pet.nb_legs, 'leg') %>.</p>
+            <p class="card-text">Found <%= pluralize(pet.days_ago, 'day') %> ago.</p>
+            <%= link_to pet_path(pet), class: "btn btn-primary" do %>
+              <i class="fa-solid fa-shield-cat"></i> More info...
+            <% end %>  
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

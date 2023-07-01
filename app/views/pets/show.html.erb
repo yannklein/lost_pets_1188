@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="text-center my-5"><%= @pet.name %></h1>
+  <div class="d-flex">
+    <img src="<%= @pet.image_url %>" class="card-img-top" alt="pet">
+    <div class="ms-3">
+      <p>A <%= @pet.species %> of <%= @pet.color %> color with <%= pluralize(@pet.nb_legs, 'leg') %>.</p>
+      <p>Found <%= pluralize(@pet.days_ago, 'day') %> ago.</p>
+    </div>
+  </div>
+</div>
